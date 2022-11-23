@@ -2,25 +2,25 @@ package SinglePattern;
 
 public class IntegerSingleton implements Resource<Integer> {
 
-    private static IntegerSingleton value = new IntegerSingleton();
+    private static IntegerSingleton inst = new IntegerSingleton();
 
-    private Integer i = Integer.valueOf(0);
+    private Integer value = Integer.valueOf(0);
 
     private IntegerSingleton() {
         System.out.println("IntegerSingleton");
     }
 
     public static IntegerSingleton instance() {
-        return value;
+        return inst;
     }
 
     @Override
     public synchronized Integer get() {
-        return i;
+        return value;
     }
 
     @Override
     public synchronized void set(Integer x) {
-        i = x;
+        value = x;
     }
 }
