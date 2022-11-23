@@ -1,6 +1,6 @@
 package SinglePattern;
 
-public class IntegerSingleton implements Resource<Integer> {
+final class IntegerSingleton implements Resource<Integer> {
 
     private static IntegerSingleton inst = new IntegerSingleton();
 
