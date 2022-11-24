@@ -1,4 +1,4 @@
-package SinglePattern;
+package SingleronPattern;
 
 public interface Resource<T> {
     T get();

@@ -1,4 +1,4 @@
-package SinglePattern;
+package SingleronPattern;
 
 public class SinglePattern {
     public static <T> void show(Resource<T> r) {

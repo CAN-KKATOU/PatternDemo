@@ -1,16 +1,22 @@
-package SinglePattern;
+package SingleronPattern;
 
 final class IntegerSingleton implements Resource<Integer> {
 
-    private static IntegerSingleton inst = new IntegerSingleton();
+    private volatile static IntegerSingleton inst;
 
-    private Integer value = Integer.valueOf(0);
+    private Integer value = 0;
 
     private IntegerSingleton() {
         System.out.println("IntegerSingleton");
     }
 
     public static IntegerSingleton instance() {
+        if (inst == null) {
+            synchronized (IntegerSingleton.class) {
+                if (inst == null)
+                    inst = new IntegerSingleton();
+            }
+        }
         return inst;
     }
 
